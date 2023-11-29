@@ -1,12 +1,17 @@
 const AlunoModel = require("../modelos/aluno")
 const bancoAlunos = require("../banco/bancoAlunos")
-let idAluno = bancoAlunos.length + 1;
+
 
 function cadastrarAluno(req, res) {
     try {
+
+        let idAluno = bancoAlunos.length + 1;
+
         const { nomeAluno, idade, dataNascimento, endereco, moraCom, qtdIrmaos, responsavel } = req.body;
+        console.log(bancoAlunos.length)
 
         const alunoEncontrado = bancoAlunos.find(aluno => aluno.idAluno === Number(idAluno));
+        console.log(alunoEncontrado)
 
         if (alunoEncontrado) {
             return res.status(201).json({ mensagem: "Aluno já existe" })
@@ -20,7 +25,7 @@ function cadastrarAluno(req, res) {
     } catch (error) {
         return res.status(500).json({ mensagem: "Erro do servidor, aluno não cadastrado." })
     }
-} //concluído - falta testar
+}
 
 function editarAluno(req, res) {
 
@@ -51,16 +56,37 @@ function editarAluno(req, res) {
         return res.status(201).json({ mensagem: "Aluno editado com sucesso!" })
 
     } catch (error) {
-
+        return res.status(500).json({ mensagem: "Erro do servidor, aluno não editado." })
     }
 
-} //concluído - falta testar
+}
 
 function deletarAluno(req, res) {
-    const { id } = req.params;
+    try {
+        const { id } = req.params;
+
+        const alunoEncontrado = bancoAlunos.find(aluno => aluno.idAluno === Number(id))
+        if (!alunoEncontrado) {
+            return res.status(404).json({ mensagem: "Aluno não encontrado, tente um id válido" })
+        }
+
+        const alunoIndex = bancoAlunos.findIndex(aluno => aluno.idAluno === Number(id))
+        bancoAlunos.splice(alunoIndex, 1)
+        console.log(bancoAlunos)
+        res.status(200).json({ mensagem: "Aluno excluído com sucesso!" })
+    } catch (error) {
+        return res.status(500).json({ mensagem: "Erro do servidor, aluno não removido." })
+    }
+
+
 }
 
 function listarAluno(req, res) {
+    try {
+        return res.status(200).json(bancoAlunos)
+    } catch (error) {
+        return res.status(500).json({ mensagem: "Erro do servidor. Não foi possível listar os alunos." })
+    }
 
 }
 
