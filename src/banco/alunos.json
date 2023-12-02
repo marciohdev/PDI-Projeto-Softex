@@ -1,0 +1,112 @@
+[
+    {
+        "idAluno": 1,
+        "nomeAluno": "Exemplo",
+        "idade": 31,
+        "dataNascimento": "24/05/1992",
+        "endereco": "Rua tal tal tal ",
+        "moraCom": "Pais",
+        "qtdIrmaos": 2,
+        "responsavel": "Pai - Fulano"
+    },
+    {
+        "idAluno": 2,
+        "nomeAluno": "Exemplo",
+        "idade": 31,
+        "dataNascimento": "24/05/1992",
+        "endereco": "Rua tal tal tal ",
+        "moraCom": "Pais",
+        "qtdIrmaos": 2,
+        "responsavel": "Pai - Fulano"
+    },
+    {
+        "idAluno": 3,
+        "nomeAluno": "Exemplo",
+        "idade": 31,
+        "dataNascimento": "24/05/1992",
+        "endereco": "Rua tal tal tal ",
+        "moraCom": "Pais",
+        "qtdIrmaos": 2,
+        "responsavel": "Pai - Fulano"
+    },
+    {
+        "idAluno": 4,
+        "nomeAluno": "Exemplo",
+        "idade": 31,
+        "dataNascimento": "24/05/1992",
+        "endereco": "Rua tal tal tal ",
+        "moraCom": "Pais",
+        "qtdIrmaos": 2,
+        "responsavel": "Pai - Fulano"
+    },
+    {
+        "idAluno": 5,
+        "nomeAluno": "Exemplo",
+        "idade": 31,
+        "dataNascimento": "24/05/1992",
+        "endereco": "Rua tal tal tal ",
+        "moraCom": "Pais",
+        "qtdIrmaos": 2,
+        "responsavel": "Pai - Fulano"
+    },
+    {
+        "idAluno": 6,
+        "nomeAluno": "Exemplo",
+        "idade": 31,
+        "dataNascimento": "24/05/1992",
+        "endereco": "Rua tal tal tal ",
+        "moraCom": "Pais",
+        "qtdIrmaos": 2,
+        "responsavel": "Pai - Fulano"
+    },
+    {
+        "idAluno": 7,
+        "nomeAluno": "Exemplo",
+        "idade": 31,
+        "dataNascimento": "24/05/1992",
+        "endereco": "Rua tal tal tal ",
+        "moraCom": "Pais",
+        "qtdIrmaos": 2,
+        "responsavel": "Pai - Fulano"
+    },
+    {
+        "idAluno": 8,
+        "nomeAluno": "Exemplo",
+        "idade": 31,
+        "dataNascimento": "24/05/1992",
+        "endereco": "Rua tal tal tal ",
+        "moraCom": "Pais",
+        "qtdIrmaos": 2,
+        "responsavel": "Pai - Fulano"
+    },
+    {
+        "idAluno": 9,
+        "nomeAluno": "Exemplo",
+        "idade": 31,
+        "dataNascimento": "24/05/1992",
+        "endereco": "Rua tal tal tal ",
+        "moraCom": "Pais",
+        "qtdIrmaos": 2,
+        "responsavel": "Pai - Fulano"
+    },
+    {
+        "idAluno": 10,
+        "nomeAluno": "Exemplo",
+        "idade": 31,
+        "dataNascimento": "24/05/1992",
+        "endereco": "Rua tal tal tal ",
+        "moraCom": "Pais",
+        "qtdIrmaos": 2,
+        "responsavel": "Pai - Fulano"
+    },
+    {
+        "idAluno": 11,
+        "nomeAluno": "Exemplo",
+        "idade": 31,
+        "dataNascimento": "24/05/1992",
+        "endereco": "Rua tal tal tal ",
+        "moraCom": "Pais",
+        "qtdIrmaos": 2,
+        "responsavel": "Pai - Fulano"
+    }
+]
