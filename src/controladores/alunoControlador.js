@@ -35,14 +35,14 @@ function editarAluno(req, res) {
         const { id } = req.params;
         const { nomeAluno, idade, dataNascimento, endereco, moraCom, qtdIrmaos, responsavel } = req.body;
 
-        const alunoEncontrado = bancoAlunos.find(aluno => aluno.idAluno === Number(id))
+        const alunoEncontrado = jsonAlunos.find(aluno => aluno.idAluno === Number(id))
 
 
         if (!alunoEncontrado) {
             return res.status(404).json({ mensagem: "Aluno não encontrado, tente um id válido" })
         }
 
-        const alunoIndex = bancoAlunos.findIndex(aluno => aluno.idAluno === Number(id))
+        const alunoIndex = jsonAlunos.findIndex(aluno => aluno.idAluno === Number(id))
 
         alunoEncontrado.nomeAluno = nomeAluno;
         alunoEncontrado.idade = idade;
@@ -52,9 +52,9 @@ function editarAluno(req, res) {
         alunoEncontrado.qtdIrmaos = qtdIrmaos;
         alunoEncontrado.responsavel = responsavel;
 
-        bancoAlunos[alunoIndex] = alunoEncontrado;
+        jsonAlunos[alunoIndex] = alunoEncontrado;
+        fs.writeFile("./src/banco/alunos.json", JSON.stringify(jsonAlunos, null, 4))//escreve no json
 
-        console.log(bancoAlunos[0])
         return res.status(201).json({ mensagem: "Aluno editado com sucesso!" })
 
     } catch (error) {
@@ -67,13 +67,15 @@ function deletarAluno(req, res) {
     try {
         const { id } = req.params;
 
-        const alunoEncontrado = bancoAlunos.findIndex(aluno => aluno.idAluno === Number(id))
+        const alunoIndex = jsonAlunos.findIndex(aluno => aluno.idAluno === Number(id))
 
-        if (alunoEncontrado === -1) {
+        if (alunoIndex === -1) {
             return res.status(404).json({ mensagem: "Aluno não encontrado, tente um id válido" })
         }
 
-        bancoAlunos.splice(alunoIndex, 1)
+        jsonAlunos.splice(alunoIndex, 1)
+        fs.writeFile("./src/banco/alunos.json", JSON.stringify(jsonAlunos, null, 4))//escreve no json
+
         res.status(200).json({ mensagem: "Aluno excluído com sucesso!" })
     } catch (error) {
         return res.status(500).json({ mensagem: "Erro do servidor, aluno não removido." })
@@ -85,7 +87,6 @@ function deletarAluno(req, res) {
 function listarAluno(req, res) {
     try {
         const urlAtual = req.path;
-        console.log(req)
 
         if (jsonAlunos.length === 0) {
             return res.status(404).json({ mensagem: "Não há registros em Alunos." })

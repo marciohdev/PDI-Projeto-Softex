@@ -1,17 +1,7 @@
 [
     {
-        "idAluno": 1,
-        "nomeAluno": "Exemplo",
-        "idade": 31,
-        "dataNascimento": "24/05/1992",
-        "endereco": "Rua tal tal tal ",
-        "moraCom": "Pais",
-        "qtdIrmaos": 2,
-        "responsavel": "Pai - Fulano"
-    },
-    {
         "idAluno": 2,
-        "nomeAluno": "Exemplo",
+        "nomeAluno": "Editado",
         "idade": 31,
         "dataNascimento": "24/05/1992",
         "endereco": "Rua tal tal tal ",
